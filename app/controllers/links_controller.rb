@@ -11,7 +11,8 @@ class LinksController < ApplicationController
       flash[:success] = "Link saved!"
       render "index"
     else
-      # sad path
+      flash.now[:danger] = @link.errors.full_messages.join(', ')
+      render "index"
     end
   end
 
