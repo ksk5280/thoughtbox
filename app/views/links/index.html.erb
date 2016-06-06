@@ -1,6 +1,12 @@
 <h1>Links Page</h1>
 
 <div class="row">
+  <%= text_field_tag 'search', nil, placeholder: 'Search...',
+    id: 'search-bar' %>
+  <a id="sort-asc">Sort alphabetically</a>
+</div>
+
+<div class="row">
   <h3>Create a new link</h3>
   <%= form_for @link, url: links_path do |f| %>
   <%= f.label :title  %>
