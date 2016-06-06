@@ -3,9 +3,9 @@ function sortAlphabetically() {
 }
 
 function filterLinksRead() {
-  console.log('linksRead')
+  console.log('linksRead');
 }
 
 function filterLinksUnread() {
-  console.log('linksUnread')
+  console.log('linksUnread');
 }
