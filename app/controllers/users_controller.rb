@@ -7,10 +7,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      flash[:success] = "Your account has been successfully created #{@user.email}!"
       session[:user_id] = @user.id
       redirect_to links_path
     else
-      # sad path
+      flash[:danger] = @user.errors.full_messages.join(', ')
       redirect_to root_path
     end
   end
