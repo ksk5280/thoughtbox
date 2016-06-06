@@ -9,7 +9,7 @@ RSpec.feature "User can sign in" do
 
     expect(current_path).to eq new_user_path
 
-    fill_in "Email address", with: "email@example.com"
+    fill_in "Email", with: "email@example.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_on "Create Account"
