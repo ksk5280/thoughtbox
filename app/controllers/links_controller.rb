@@ -4,12 +4,12 @@ class LinksController < ApplicationController
       redirect_to root_path
     else
       @link = Link.new
-      @links = Link.all
+      @links = current_user.links.all
     end
   end
 
   def create
-    @link = Link.new(link_params)
+    @link = current_user.links.new(link_params)
 
     if @link.save
       flash[:success] = "Link saved!"

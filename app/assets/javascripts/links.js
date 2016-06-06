@@ -12,7 +12,7 @@ function renderLink(link) {
     $linkDiv;
 
   linkContent += `<div class="link" id="${link.id}-link">`;
-  linkContent += `<li id="${link.id}-li">${link.title}: ${link.url}</li>`;
+  linkContent += `<li id="${link.id}-li"><strong>${link.title}:</strong> ${link.url}</li>`;
   linkContent += `<button class="btn btn-default" id="${link.id}-read">Mark as Read</button>`;
   linkContent += `<button class="btn btn-default hide" id="${link.id}-unread">Mark as Unread</button>`;
   linkContent += `<button class="btn btn-default" id="${link.id}-edit">Edit</button></div>`;
