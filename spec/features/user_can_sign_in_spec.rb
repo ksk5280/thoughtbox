@@ -22,7 +22,6 @@ RSpec.feature "User can sign in" do
 end
 
 
-# As an unauthenticated user, when I visit the root of the application, I should be redirected to a page which prompts me to "Log In or Sign Up".
 
 # If I click "Sign Up", I should be taken to a user form where I can enter an email address, a password, and a password confirmation.
 
