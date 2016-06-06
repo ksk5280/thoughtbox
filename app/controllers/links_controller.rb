@@ -1,7 +1,11 @@
 class LinksController < ApplicationController
   def index
-    @link = Link.new
-    @links = Link.all
+    if current_user.nil?
+      redirect_to root_path
+    else
+      @link = Link.new
+      @links = Link.all
+    end
   end
 
   def create
