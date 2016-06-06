@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "User can sign up" do
+RSpec.feature "Unregistered visitor can sign up" do
   scenario "they see the links page" do
     visit "/"
 
