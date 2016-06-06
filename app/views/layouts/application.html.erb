@@ -11,11 +11,15 @@
     <h1>Thoughtbox!</h1>
     <%= link_to "Home", root_path %>
     <%= link_to "Log Out", logout_path, method: :delete %>
+    <%= link_to "Links", links_path %>
   </nav>
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
-  <%= yield %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

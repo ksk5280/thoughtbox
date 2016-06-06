@@ -17,6 +17,6 @@ RSpec.feature "Unregistered visitor can sign up" do
     user = User.last
 
     expect(current_path).to eq links_path
-    expect(page).to have_content "Welcome #{user.email}!"
+    expect(page).to have_content "Your account has been successfully created email@example.com!"
   end
 end
