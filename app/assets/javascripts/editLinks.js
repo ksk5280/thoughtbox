@@ -27,8 +27,8 @@ function editLink(e) {
 function changeData(id, linkTitle, linkUrl) {
   let data = {title: linkTitle, url: linkUrl};
 
-  $.ajax({
-    url: "api/v1/links/" + id,
-    method: "PATCH",
-  });
+  // $.ajax({
+  //   url: "api/v1/links/" + id,
+  //   method: "PATCH",
+  // });
 }
