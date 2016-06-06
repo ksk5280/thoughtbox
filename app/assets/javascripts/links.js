@@ -7,12 +7,27 @@ function getLinks() {
 }
 
 function renderLink(link) {
-  let linkContent = '';
+  let
+    linkContent = '',
+    $linkDiv;
 
-  linkContent += sprintf('<div class="link">');
-  linkContent += sprintf('<li>%s: ', link.title);
-  linkContent += sprintf('%s</li></div>', link.url);
+  linkContent += '<div class="link">';
+  linkContent += `<li>${link.title}: ${link.url}</li></div>`;
+  linkContent += `<button class="btn btn-default" id="${link.id}-read">Mark as Read</button>`;
+  linkContent += `<button class="btn btn-default" id="${link.id}-unread">Mark as Unread</button>`;
 
   $linkDiv = $(linkContent);
   $('.links').append($linkDiv);
+
+  // add Event Listeners
+  $(`#${link.id}-read`).on('click', markAsRead);
+  $(`#${link.id}-unread`).on('click', markAsUnread);
+}
+
+function markAsRead() {
+  $(this).prev().addClass('readLink');
+}
+
+function markAsUnread() {
+  $(this).prev().prev().removeClass('readLink');
 }
