@@ -1,9 +1,20 @@
-<h1>Links Page</h1>
+<h3>Links Page</h3>
 
 <div class="row">
   <%= text_field_tag 'search', nil, placeholder: 'Search...',
     id: 'search-bar' %>
-  <a id="sort-asc">Sort alphabetically</a>
+</div>
+
+<div class="row">
+  <button class="btn btn-default" id="sort-asc" onclick="sortAlphabetically()">
+    Sort alphabetically
+  </button>
+  <button class="btn btn-default" id="filter-read" onclick="filterLinksRead()">
+    Links Read
+  </button>
+  <button class="btn btn-default" id="filter-unread" onclick="filterLinksUnread()">
+    Links Unread
+  </button>
 </div>
 
 <div class="row">
