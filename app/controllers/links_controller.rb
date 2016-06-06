@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
   def index
-    @user = User.find(1)
+    @user = current_user
   end
 end

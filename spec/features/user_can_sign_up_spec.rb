@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.feature "User can sign in" do
-  scenario "they see user dashboard" do
+RSpec.feature "User can sign up" do
+  scenario "they see the links page" do
     visit "/"
 
     expect(page).to have_content "Log In or Sign Up"
@@ -20,11 +20,3 @@ RSpec.feature "User can sign in" do
     expect(page).to have_content "Welcome #{user.email}!"
   end
 end
-
-
-
-# If I click "Sign Up", I should be taken to a user form where I can enter an email address, a password, and a password confirmation.
-
-# I cannot sign up with an email address that has already been used.
-# Password and confirmation must match.
-# Upon submitting this information, I should be logged in via a cookie and redirected to the "Links Index" page.
