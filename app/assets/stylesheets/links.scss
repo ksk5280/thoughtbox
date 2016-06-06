@@ -1,3 +1,25 @@
 // Place all the styles related to the Links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.readLink {
+  text-decoration: line-through;
+}
+
+.hide {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+.link {
+  margin: 20px;
+}
+
+#search-bar {
+  margin-bottom: 20px;
+  height: 30px;
+  font-size: 18px;
+}

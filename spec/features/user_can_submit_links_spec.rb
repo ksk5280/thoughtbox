@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Authenticated user can submit links" do
+RSpec.feature "Authenticated user can submit links", js: true do
   scenario "they see links" do
     user = login_user
 

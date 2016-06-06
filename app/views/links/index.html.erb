@@ -1,4 +1,21 @@
-<h1>Links Page</h1>
+<h3>Links Page</h3>
+
+<div class="row">
+  <%= text_field_tag 'search', nil, placeholder: 'Search...',
+    id: 'search-bar' %>
+</div>
+
+<div class="row">
+  <button class="btn btn-default" id="sort-asc" onclick="sortAlphabetically()">
+    Sort alphabetically
+  </button>
+  <button class="btn btn-default" id="filter-read" onclick="filterLinksRead()">
+    Links Read
+  </button>
+  <button class="btn btn-default" id="filter-unread" onclick="filterLinksUnread()">
+    Links Unread
+  </button>
+</div>
 
 <div class="row">
   <h3>Create a new link</h3>
@@ -15,11 +32,4 @@
 
 <h3>All links</h3>
 <div class="links">
-  <% unless @links.nil? || @links.empty? %>
-    <ul>
-      <% @links.each do |link| %>
-      <li><%= link.title %>: <%= link.url %></li>
-      <% end %>
-    </ul>
-  <% end %>
 </div>

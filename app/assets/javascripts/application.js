@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require lodash.min
+
+$(document).ready(function() {
+  getLinks();
+});
