@@ -15,11 +15,4 @@
 
 <h3>All links</h3>
 <div class="links">
-  <% unless @links.nil? || @links.empty? %>
-    <ul>
-      <% @links.each do |link| %>
-      <li><%= link.title %>: <%= link.url %></li>
-      <% end %>
-    </ul>
-  <% end %>
 </div>

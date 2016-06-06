@@ -4,13 +4,15 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'figaro'
 gem 'pg'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'responders', '~> 2.0'
+gem 'selenium-webdriver'
 gem 'validate_url'
+gem 'sprockets', '>=3.0.0.beta'
+gem 'sprockets-es6'
 gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'pry'
