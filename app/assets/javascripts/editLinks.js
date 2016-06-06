@@ -6,7 +6,7 @@ function linkKeyPress(e) {
 }
 
 function linkBlur(e) {
-  let
+  var
     $this = $(this),
     id = parseInt(this.id[0]),
     linkTitle = $this.html().split(': ')[0],
@@ -16,7 +16,7 @@ function linkBlur(e) {
 }
 
 function editLink(e) {
-  let
+  var
     $linkText = $(this).siblings('li'),
     id = e.data.id;
 
@@ -25,7 +25,7 @@ function editLink(e) {
 }
 
 function changeData(id, linkTitle, linkUrl) {
-  let data = {title: linkTitle, url: linkUrl};
+  var data = {title: linkTitle, url: linkUrl};
 
   // $.ajax({
   //   url: "api/v1/links/" + id,

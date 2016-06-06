@@ -1,10 +1,10 @@
 $('#search-bar').on('keyup', function(){
-  let
+  var
     $links = $('.link'),
     currentLink = this.value;
 
   $links.each(function (index, link) {
-    let
+    var
       $link = $(link);
       linkText = $link.children("li").html();
 

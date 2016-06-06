@@ -7,25 +7,25 @@ function getLinks() {
 }
 
 function renderLink(link) {
-  let
+  var
     linkContent = '',
     $linkDiv;
 
-  linkContent += `<div class="link" id="${link.id}-link">`;
-  linkContent += `<li id="${link.id}-li"><strong>${link.title}:</strong> ${link.url}</li>`;
-  linkContent += `<button class="btn btn-default" id="${link.id}-read">Mark as Read</button>`;
-  linkContent += `<button class="btn btn-default hide" id="${link.id}-unread">Mark as Unread</button>`;
-  linkContent += `<button class="btn btn-default" id="${link.id}-edit">Edit</button></div>`;
+  linkContent += '<div class="link" id="' + link.id + '-link">';
+  linkContent += '<li id="' + link.id + '-li"><strong>' + link.title + ':</strong> ' + link.url + '</li>';
+  linkContent += '<button class="btn btn-default" id="' + link.id + '-read">Mark as Read</button>';
+  linkContent += '<button class="btn btn-default hide" id="' + link.id + '-unread">Mark as Unread</button>';
+  linkContent += '<button class="btn btn-default" id="' + link.id + '-edit">Edit</button></div>';
 
   $linkDiv = $(linkContent);
   $('.links').append($linkDiv);
 
   // add Event Listeners
-  $(`#${link.id}-read`).on('click', markAsRead);
-  $(`#${link.id}-unread`).on('click', markAsUnread);
-  $(`#${link.id}-edit`).on('click', {id: link.id}, editLink);
-  $(`#${link.id}-li`).on('keypress', linkKeyPress);
-  $(`#${link.id}-li`).on('blur', linkBlur);
+  $('#' + link.id + '-read').on('click', markAsRead);
+  $('#' + link.id + '-unread').on('click', markAsUnread);
+  $('#' + link.id + '-edit').on('click', {id: link.id}, editLink);
+  $('#' + link.id + '-li').on('keypress', linkKeyPress);
+  $('#' + link.id + '-li').on('blur', linkBlur);
 }
 
 function markAsRead() {
