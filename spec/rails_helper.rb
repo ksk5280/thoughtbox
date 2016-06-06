@@ -5,6 +5,23 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+
+def login_user
+  user = User.create(
+    email: "email@example.com",
+    password: "password",
+    password_confirmation: "password"
+  )
+
+  visit "/"
+  click_on "Log In"
+  fill_in "Email", with: "email@example.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_on "Log In"
+  user
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
