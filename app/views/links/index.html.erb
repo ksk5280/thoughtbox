@@ -30,6 +30,34 @@
   <% end %>
 </div>
 
+<!-- <h3>All links</h3>
+<div class="links">
+</div> -->
+
 <h3>All links</h3>
 <div class="links">
+  <% unless @links.nil? || @links.empty? %>
+    <ul>
+      <% @links.each do |link| %>
+        <div class="link" id="<%= link.id %>">
+          <% if link.read == true %>
+            <li id="<%= link.id %>-link">
+              <p class="link-title"><strong><%= link.title %>: </strong></p>
+              <p id="<%= link.id %>-link-url" class="link-url read-link"><%= link.url %></p>
+            </li>
+            <button class="btn btn-default hide" id="<%= link.id %>-read">Mark as Read</button>
+            <button class="btn btn-default" id="<%= link.id %>-unread">Mark as Unread</button>
+          <% else %>
+            <li id="<%= link.id %>">
+              <p class="link-title"><strong><%= link.title %>: </strong></p>
+              <p id="<%= link.id %>-link-url" class="link-url"><%= link.url %></p>
+            </li>
+            <button class="btn btn-default" id="<%= link.id %>-read">Mark as Read</button>
+            <button class="btn btn-default hide" id="<%= link.id %>-unread">Mark as Unread</button>
+          <% end %>
+          <button class="btn btn-default" id="<%= link.id %>-edit">Edit</button>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

@@ -2,6 +2,7 @@ function getLinks() {
   $.get('/api/v1/links', function(links) {
     links.forEach(function(link){
       renderLink(link);
+      addEventListeners(link);
     });
   });
 }
@@ -19,23 +20,12 @@ function renderLink(link) {
 
   $linkDiv = $(linkContent);
   $('.links').append($linkDiv);
+}
 
-  // add Event Listeners
-  $('#' + link.id + '-read').on('click', markAsRead);
-  $('#' + link.id + '-unread').on('click', markAsUnread);
+function addEventListeners(link) {
+  $('#' + link.id + '-read').on('click', {id: link.id}, markAsRead);
+  $('#' + link.id + '-unread').on('click', {id: link.id}, markAsUnread);
   $('#' + link.id + '-edit').on('click', {id: link.id}, editLink);
   $('#' + link.id + '-li').on('keypress', linkKeyPress);
   $('#' + link.id + '-li').on('blur', linkBlur);
-}
-
-function markAsRead() {
-  $(this).prev().addClass('readLink');
-  $(this).toggleClass('hide');
-  $(this).next().toggleClass('hide');
-}
-
-function markAsUnread() {
-  $(this).prev().prev().removeClass('readLink');
-  $(this).toggleClass('hide');
-  $(this).prev().toggleClass('hide');
 }

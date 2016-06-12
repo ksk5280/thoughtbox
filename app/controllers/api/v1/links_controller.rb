@@ -16,6 +16,7 @@ module Api
 
       private
         def link_params
+          params.permit("read", "url", "title")
         end
     end
   end
