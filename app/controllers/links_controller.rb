@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     @link = current_user.links.new(link_params)
 
     if @link.save
-      flash[:success] = "Link saved!"
+      flash.now[:success] = "Link saved!"
       render "index"
     else
       flash.now[:danger] = @link.errors.full_messages.join(', ')

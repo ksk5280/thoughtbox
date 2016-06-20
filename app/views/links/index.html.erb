@@ -1,9 +1,9 @@
 <h3>Links Page</h3>
 
-<div class="row">
-  <%= text_field_tag 'search', nil, placeholder: 'Search...',
+<form class="row">
+  <%= text_field_tag 'search', nil, placeholder: 'Search...', class: "form-control",
     id: 'search-bar' %>
-</div>
+</form>
 
 <div class="row">
   <button class="btn btn-default" id="sort-asc" onclick="sortAlphabetically()">
@@ -30,10 +30,6 @@
   <% end %>
 </div>
 
-<!-- <h3>All links</h3>
-<div class="links">
-</div> -->
-
 <h3>All links</h3>
 <div class="links">
   <% unless @links.nil? || @links.empty? %>
@@ -48,7 +44,7 @@
             <button class="btn btn-default hide" id="<%= link.id %>-read">Mark as Read</button>
             <button class="btn btn-default" id="<%= link.id %>-unread">Mark as Unread</button>
           <% else %>
-            <li id="<%= link.id %>">
+            <li id="<%= link.id %>-link">
               <p class="link-title"><strong><%= link.title %>: </strong></p>
               <p id="<%= link.id %>-link-url" class="link-url"><%= link.url %></p>
             </li>

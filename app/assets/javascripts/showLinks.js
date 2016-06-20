@@ -1,7 +1,6 @@
 function getLinks() {
   $.get('/api/v1/links', function(links) {
     links.forEach(function(link){
-      renderLink(link);
       addEventListeners(link);
     });
   });
@@ -26,6 +25,6 @@ function addEventListeners(link) {
   $('#' + link.id + '-read').on('click', {id: link.id}, markAsRead);
   $('#' + link.id + '-unread').on('click', {id: link.id}, markAsUnread);
   $('#' + link.id + '-edit').on('click', {id: link.id}, editLink);
-  $('#' + link.id + '-li').on('keypress', linkKeyPress);
-  $('#' + link.id + '-li').on('blur', linkBlur);
+  $('#' + link.id + '-link').on('keypress', linkKeyPress);
+  $('#' + link.id + '-link').on('blur', linkBlur);
 }

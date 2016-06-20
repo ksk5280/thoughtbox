@@ -8,9 +8,9 @@ function linkKeyPress(e) {
 function linkBlur(e) {
   var
     $this = $(this),
-    id = parseInt(this.id[0]),
-    linkTitle = $this.html().split(': ')[0],
-    linkUrl = $this.html().split(': ')[1];
+    id = parseInt(this.id.substr(0,2)),
+    linkTitle = $this[0].innerText.split(':  ')[0],
+    linkUrl = $this[0].innerText.split(':  ')[1];
 
   changeData(id, linkTitle, linkUrl);
 }
