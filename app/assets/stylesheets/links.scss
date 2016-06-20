@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.readLink {
-  text-decoration: line-through;
-}
-
-.hide {
-  display: none;
-}
-
 li {
   list-style: none;
 }
@@ -18,8 +10,25 @@ li {
   margin: 20px;
 }
 
+.link-title {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.link-url {
+  display: inline-block;
+}
+
 #search-bar {
   margin-bottom: 20px;
   height: 30px;
   font-size: 18px;
+}
+
+.read-link {
+  text-decoration: line-through;
+}
+
+.hide {
+  display: none;
 }
